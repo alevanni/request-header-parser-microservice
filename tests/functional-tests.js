@@ -25,7 +25,7 @@ suite("Functional Tests", function() {
             assert.equal(res.status, 200);
             var jsonRes = JSON.parse(res.text);
             assert.isObject(jsonRes);
-            assert.hasAnyKeys(jsonRes, ['ip', 'software', 'language']);
+            assert.hasAnyKeys(jsonRes, ['ipaddress', 'software', 'language']);
             done();
           });
       });
