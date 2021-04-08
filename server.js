@@ -5,7 +5,7 @@
 var express = require('express');
 var app = express();
 var http = require("http")
-
+var runner = require('./test-runner');
 // enable CORS (https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)
 // so that your API is remotely testable by FCC 
 var cors = require('cors');
@@ -31,7 +31,11 @@ app.get('/api/whoami', function(req, res){
   var software= headers["user-agent"];
   var language= headers["accept-language"];
   var ip=headers["x-forwarded-for"];
-  ip= ip.slice(0, ip.indexOf(","));
+  console.log("ip " + ip)
+  if (ip != undefined){
+    ip= ip.slice(0, ip.indexOf(","));
+  }
+  
   
   
  res.json({ipaddress: ip, language: language, software: software});
@@ -42,4 +46,18 @@ app.get('/api/whoami', function(req, res){
 // listen for requests :)
 var listener = app.listen(process.env.PORT, function () {
   console.log('Your app is listening on port ' + listener.address().port);
+  if(process.env.NODE_ENV==='test') { //we launch the tests
+    console.log('Running Tests...');
+    setTimeout(function () {
+      try {
+        runner.run();
+      } catch(e) {
+        var error = e;
+          console.log('Tests are not valid:');
+          console.log(error);
+      }
+    }, 1500);
+  }
+  
 });
+module.exports = app; 
