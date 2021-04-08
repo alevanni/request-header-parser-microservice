@@ -3,6 +3,12 @@
 ### User stories:
 1. I can get the IP address, preferred languages (from header `Accept-Language`) and system infos (from header `User-Agent`) for my device.
 
+### Tests 
+Tests can be found in the folder /tests:
+1. Postman test cases are in the "GET Suite.postman_collection.json"  file
+2. Postman results are in the "GET Suite.postman_test_run.json" file
+3. Automated test cases are in the "functional-tests.js" file
+
 #### Example usage:
 * [base_url]/api/whoami
 
