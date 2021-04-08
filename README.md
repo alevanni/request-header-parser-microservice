@@ -1,5 +1,5 @@
 # API Project: Request Header Parser Microservice for freeCodeCamp
-
+![My Preview](https://lh3.googleusercontent.com/80bmBVeGOM9_JpgA-8WzuO9EfBJJj5Pl3G3IUsFrIeRUp5Cl8SpeIU7zissdc4ZsjHsV-ZsqeJA_R3lbKkYQ2ovmWpTUWC-vQGVIlWh0K6tqY1scJuVx7_UIvXUNNzrx9AyoXTQsvA=w2400)
 ### User stories:
 1. I can get the IP address, preferred languages (from header `Accept-Language`) and system infos (from header `User-Agent`) for my device.
 
